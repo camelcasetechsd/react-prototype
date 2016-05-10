@@ -1,0 +1,28 @@
+{
+  "name": "react-prototype",
+  "homepage": "https://github.com/camelcasetechsd/react-prototype",
+  "authors": [
+    "Mohamed Labib <mohamed.labib@camelcasetech.com>"
+  ],
+  "description": "Prototype for ReactJs",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "react",
+    "webpack",
+    "sass"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "0.14.8"
+  }
+}
