@@ -1,0 +1,30 @@
+{
+  "name": "react-prototype",
+  "version": "0.0.1",
+  "description": "Prototype for ReactJs",
+  "main": "index.html",
+  "dependencies": {
+    "react": "0.14.8",
+    "react-dom": "0.14.8"
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/camelcasetechsd/react-prototype.git"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "sass"
+  ],
+  "author": "Mohamed Labib <mohamed.labib@camelcasetech.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/camelcasetechsd/react-prototype/issues"
+  }
+}
