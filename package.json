@@ -5,13 +5,20 @@
   "main": "index.html",
   "dependencies": {
     "react": "0.14.8",
-    "react-dom": "0.14.8"
+    "react-dom": "0.14.8",
+    "babel-preset-react": "~6.5.0",
+    "babel-core": "~6.8.0",
+    "babel-loader": "~6.2.4",
+    "babel-preset-es2015": "~6.6.0",
+    "webpack": "~1.13.0"
   },
   "directories": {
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=development webpack -d --progress --colors --display-error-details",
+    "prod": "NODE_ENV=production webpack -p"
   },
   "repository": {
     "type": "git",
@@ -26,5 +33,9 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/camelcasetechsd/react-prototype/issues"
+  },
+  "devDependencies": {
+    "react-hot-loader": "~1.3.0",
+    "webpack-dev-server": "~1.14.1"
   }
 }
