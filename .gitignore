@@ -1,2 +1,6 @@
 ### NPM ###
 node_modules
+
+### wepback output ###
+public/assets/bundle.js
+public/assets/bundle.js.map
