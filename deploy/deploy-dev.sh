@@ -4,5 +4,5 @@
 deploy/deploy.sh
 
 #Init webpack loader for dev env.
-node server.js
+NODE_ENV=development node webpackDevServer.js
 npm run dev
