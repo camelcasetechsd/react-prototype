@@ -11,10 +11,12 @@ Run For Development 'using node.js server instead of php'
  * `./deploy/deploy-dev.sh`
  * Then access project @ [http://demo-react.com:3000/public](http://demo-react.com:3000/public)
 
-
-Add helloworld example
-Add a simple crud with add more function and actions
-Add style via scss to page
-convert jsx to js minified via webpack with babel
-convert sass to css minified via webpack
-edits in files [js and css] in development reflected in browser instantly without a refresh
+Demo expected output
+ * helloworld basic example
+ * a crud with [add more] function and [add, edit, delete, done] actions, or simpler form
+ * style via scss to page
+ * webpack compiling for [jsx, es2015 and scss]
+ * webpack minify and uglify in production environment
+ * webpack reflect changed chunks in browser instantly without a refresh
+ * determine best practice [flux, redux, fetch, ...etc] for ajax requests
+ * environment built via vagrant

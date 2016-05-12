@@ -13,16 +13,10 @@ module.exports = {
     APP_DIR + "/app.js", // main app code
   ],
   output: {
-    path: BUILD_DIR, // output directory for bundle.js
+    path: BUILD_DIR + '/js', // output directory for bundle.js
     filename: 'bundle.js', // output file name
-    publicPath: '../public/assets/' // output directory for hot react changes json files
+    publicPath: '../public/assets/js/' // output directory for hot react changes json files
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-    // Enables Hot Module Replacement
-    // Generates Hot Update Chunks of each chunk in the records
-    // Check https://github.com/webpack/docs/wiki/list-of-plugins#hotmodulereplacementplugin
-  ],
   module : {
     loaders: [{
       test: /\.js(x)?/, // check all files with js or jsx format
