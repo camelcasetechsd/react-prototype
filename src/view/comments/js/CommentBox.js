@@ -30,7 +30,6 @@ export class CommentBox extends React.Component {
 
   componentDidMount() {
     this.loadCommentsFromServer();
-    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
   }
 
   handleCommentSubmit(comment) {
@@ -70,7 +69,7 @@ export class CommentBox extends React.Component {
 var commentsElement = document.getElementById('comments');
 if(commentsElement){
   render(
-    <CommentBox url="/apiRouter.php?edge=comments" pollInterval={2000} /* 2 seconds*/ />,
+    <CommentBox url="/apiRouter.php?edge=comments"/>,
     commentsElement
   );
 }
