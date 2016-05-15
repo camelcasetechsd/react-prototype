@@ -1,9 +1,10 @@
-@import "compass/css3";
+// @import "compass/css3"; //use it only if webpack is not comiling scss and compass is doing instead
 $borderColor: #ccc;
 $dialogBoxColor: #dadada;
 $messageColor: #797979;
 
 .tip {
+
 	width: 0;
 	height: 0;
 	position: absolute;

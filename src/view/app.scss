@@ -1,0 +1,10 @@
+// Import compass mixins
+@import "compass";
+
+// Import bootstrap
+/* Enable asset helper so that url() points to the actual file */
+$bootstrap-sass-asset-helper: true;
+@import "bootstrap";
+
+// Import app specific styles
+@import "comments/css/commentBox";
