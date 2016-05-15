@@ -3,7 +3,6 @@ node_modules
 
 ### wepback 'compiling' output ###
 public/assets
-public/assets
 
 ### sass ###
 .sass-cache
