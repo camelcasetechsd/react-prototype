@@ -4,20 +4,22 @@ import {render} from 'react-dom';
 export class CommentStructure extends React.Component {
   render () {
     return (
-      <div>
-        <h4>Comment Structure:</h4>
-        <ul>
-          <li>CommentBox
-            <ul>
-              <li>CommentList
-                <ul>
-                  <li>Comment</li>
-                </ul>
-              </li>
-              <li>CommentForm</li>
-            </ul>
-          </li>
-        </ul>
+      <div className="row">
+        <div className="col-md-4">
+          <h4>Comment Structure:</h4>
+          <ul className="list-group">
+            <li className="list-group-item">CommentBox
+              <ul className="list-group">
+                <li className="list-group-item">CommentList
+                  <ul className="list-group">
+                    <li className="list-group-item">Comment</li>
+                  </ul>
+                </li>
+                <li className="list-group-item">CommentForm</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     );
   }

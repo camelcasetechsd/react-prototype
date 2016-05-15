@@ -16,7 +16,7 @@ Demo expected output
  * [] a crud with [add more] function and [add, edit, delete, done] actions, or simpler form
  * [x] style via scss using compass compiler
  * [x] webpack compiling for [jsx, es2015]
- * [] webpack compiling for [css, scss]
+ * [x] webpack compiling for [scss]
  * [x] webpack minify and uglify in production environment
  * [x] webpack reflect changed chunks in browser instantly without a refresh
  * [] determine best practice [XMLHttpRequest, fetch, ...etc] for ajax requests

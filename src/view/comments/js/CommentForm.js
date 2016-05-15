@@ -34,20 +34,26 @@ export class CommentForm extends React.Component {
 
   render() {
     return (
-      <form className="commentForm" onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          placeholder="Your name"
-          value={this.state.author}
-          onChange={this.handleAuthorChange}
-        />
-        <input
-          type="text"
-          placeholder="Say something..."
-          value={this.state.text}
-          onChange={this.handleTextChange}
-        />
-        <input type="submit" value="Post" />
+      <form className="commentForm form-inline" onSubmit={this.handleSubmit}>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Your name"
+            value={this.state.author}
+            onChange={this.handleAuthorChange}
+            className="form-control"
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Say something..."
+            value={this.state.text}
+            onChange={this.handleTextChange}
+            className="form-control"
+          />
+        </div>
+        <input type="submit" value="Post" className="btn btn-default"/>
       </form>
     );
   }
