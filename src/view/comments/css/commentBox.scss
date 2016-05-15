@@ -1,0 +1,83 @@
+@import "compass/css3";
+$borderColor: #ccc;
+$dialogBoxColor: #dadada;
+$messageColor: #797979;
+
+.tip {
+	width: 0;
+	height: 0;
+	position: absolute;
+	background: transparent;
+	border: 10px solid $borderColor;
+}
+
+@mixin tip($direction) {
+  $topBorderColor: transparent;
+  $leftBorderColor: transparent;
+  $bottomBorderColor: transparent;
+  $rightBorderColor: transparent;
+  $newBorderColor: inherit;
+  $top: 0px;
+  $left: 0px;
+  $bottom: 0px;
+  $right: 0px;
+  @if $direction == 'top' {
+     $top: -25px;
+     $left: 10px;
+     $bottomBorderColor: $newBorderColor;
+  } @elseif $direction == 'bottom' {
+     $left: 10px;
+     $bottom: -25px;
+     $topBorderColor: $newBorderColor;
+  } @elseif $direction == 'left' {
+     $top: 10px;
+     $left: -25px;
+     $rightBorderColor: $newBorderColor;
+  } @elseif $direction == 'right' {
+     $top: 10px;
+     $right: -25px;
+     $leftBorderColor: $newBorderColor;
+  }
+  top: $top;
+ 	left: $left;
+  bottom: $bottom;
+	right: $right;
+ 	border-top-color: $topBorderColor;
+  border-left-color: $leftBorderColor;
+  border-bottom-color: $bottomBorderColor;
+  border-right-color: $rightBorderColor;
+}
+
+.tip-up {
+  @include tip('top');
+}
+.tip-down {
+  @include tip('bottom');
+}
+.tip-left {
+  @include tip('left');
+}
+.tip-right {
+  @include tip('right');
+}
+.dialogbox {
+ .body {
+	position: relative;
+	max-width: 300px;
+	height: auto;
+	margin: 20px 10px;
+	padding: 5px;
+	background-color: $dialogBoxColor;
+  @include border-radius(3px, 3px);
+	border: 5px solid $borderColor;
+
+   .message {
+  	min-height: 30px;
+  	@include border-radius(3px, 3px);
+  	font-family: Arial;
+  	font-size: 14px;
+  	line-height: 1.5;
+  	color: $messageColor;
+    }
+  }
+}

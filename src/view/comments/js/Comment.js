@@ -9,11 +9,14 @@ export class Comment extends React.Component {
   }
   render () {
     return (
-      <div className="comment">
-        <span dangerouslySetInnerHTML={this.rawMarkup()} />
-        <h5 className="commentAuthor">
-          By {this.props.author}
-        </h5>
+      <div className="dialogbox comment">
+        <div className="body">
+          <span className="tip tip-up" />
+          <span dangerouslySetInnerHTML={this.rawMarkup()} />
+          <h5 className="message commentAuthor">
+            By {this.props.author}
+          </h5>
+        </div>
       </div>
     );
   }
