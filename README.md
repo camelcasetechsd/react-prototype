@@ -19,6 +19,6 @@ Demo expected output
  * [x] webpack compiling for [scss]
  * [x] webpack minify and uglify in production environment
  * [x] webpack reflect changed chunks in browser instantly without a refresh
- * [ ] determine best practice [XMLHttpRequest, fetch, ...etc] for ajax requests
+ * [x] determine best practice [XMLHttpRequest, fetch, ...etc] for ajax requests -> used fetch polyfill
  * [ ] determine right flow 'flux' and check redux
  * [ ] environment built via vagrant

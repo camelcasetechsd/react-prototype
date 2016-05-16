@@ -20,8 +20,8 @@ function postData(){
   $commentsDecoded = json_decode($comments, true);
   $commentsDecoded[] = [
       'id'      => round(microtime(true) * 1000),
-      'author'  => $_POST['author'],
-      'text'    => $_POST['text']
+      'author'  => filter_input(INPUT_POST, 'author'),
+      'text'    => filter_input(INPUT_POST, 'text')
   ];
   $comments = json_encode($commentsDecoded, JSON_PRETTY_PRINT);
   file_put_contents(RESOURCE_PATH, $comments);
