@@ -10,8 +10,6 @@ var APP_DIR = path.resolve(__dirname, '../src/view');
 // generic configuration
 module.exports = {
   entry: [
-    NPM_DIR + "/jquery/dist/jquery.min.js",
-    NPM_DIR + "/marked/marked.min.js",
     APP_DIR + "/app.js", // main app code
   ],
   output: {
@@ -27,7 +25,7 @@ module.exports = {
       // babel used as next generation javascript compiler using set presets in .babelrc [es2015 and react presets]
       // es2015 preset or ECMAScript 2015 is the newest version of the ECMAScript standard, check https://babeljs.io/docs/learn-es2015/
       // react preset strip flow types and transform JSX into createElement calls
-      include: path.join(__dirname, '../src') // check all files at this directory
+      include: [path.join(__dirname, '../src'), path.join(__dirname, './')] // check all files at this directory
     },
     // In order to use SASS you'll need at least the sass-loader and the css-loader.
     // The css-loader returns a JavaScript string.
@@ -56,6 +54,10 @@ module.exports = {
   plugins: [
       new ExtractTextPlugin("bundle.css", {
             allChunks: true
-        })
+        }),
+      new webpack.ProvidePlugin({
+        Promise: 'imports?this=>global!exports?global.Promise!es6-promise',
+        fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch',
+      })
   ]
 };
