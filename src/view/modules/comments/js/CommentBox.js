@@ -2,7 +2,10 @@ import React from 'react';
 import {render} from 'react-dom';
 import {CommentList} from './CommentList.js';
 import {CommentForm} from './CommentForm.js';
-import $ from 'jquery';
+import {ResponseHelper} from './../../../utilities/js/ResponseHelper.js';
+import {RequestHelper} from './../../../utilities/js/RequestHelper.js';
+import 'whatwg-fetch';
+var config = require('config');
 
 export class CommentBox extends React.Component {
   constructor(props) {
@@ -15,17 +18,18 @@ export class CommentBox extends React.Component {
   }
 
   loadCommentsFromServer() {
-    $.ajax({
-      url: this.props.url,
-      dataType: 'json',
-      cache: false,
-      success: function(data) {
-        this.setState({data: data});
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
+    fetch(this.props.url, {
+        cache: "no-cache"
+      })
+      .then(ResponseHelper.checkStatus)
+      .then(function(response) {
+        response.json().then(function(data){
+          this.setState({data: data});
+        }.bind(this));
+
+      }.bind(this)).catch(function(error) {
+        console.error(this.props.url, status, error.toString());
+      }.bind(this));
   }
 
   componentDidMount() {
@@ -40,19 +44,24 @@ export class CommentBox extends React.Component {
     comment.id = Date.now();
     var newComments = comments.concat([comment]);
     this.setState({data: newComments});
-    $.ajax({
-      url: this.props.url,
-      dataType: 'json',
-      type: 'POST',
-      data: comment,
-      success: function(data) {
-        this.setState({data: data});
-      }.bind(this),
-      error: function(xhr, status, err) {
+    fetch(this.props.url, {
+        method: 'POST',
+        body: RequestHelper.serialize(comment),
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        cache: "no-cache",
+      })
+      .then(ResponseHelper.checkStatus)
+      .then(function(response) {
+        response.json().then(function(data){
+          this.setState({data: data});
+        }.bind(this));
+
+      }.bind(this)).catch(function(error) {
         this.setState({data: comments});
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
+        console.error(this.props.url, status, error.toString());
+      }.bind(this));
   }
 
   render() {
@@ -69,7 +78,7 @@ export class CommentBox extends React.Component {
 var commentsElement = document.getElementById('comments');
 if(commentsElement){
   render(
-    <CommentBox url="/apiRouter.php?edge=comments"/>,
+    <CommentBox url={config.routeBase + "/apiRouter.php?edge=comments"}/>,
     commentsElement
   );
 }
