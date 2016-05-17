@@ -21,7 +21,7 @@ export class Note extends React.Component {
 
   handleDeleteSubmit(e) {
     e.preventDefault();
-    var id = this.props.id.trim();
+    var id = this.props.id;
     this.props.onNoteDelete(id);
   }
 
