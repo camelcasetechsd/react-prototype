@@ -63,7 +63,7 @@ function deleteData(){
       break;
     }
   }
-  $notes = json_encode($notesDecoded, JSON_PRETTY_PRINT);
+  $notes = json_encode(array_values($notesDecoded), JSON_PRETTY_PRINT);
   file_put_contents(RESOURCE_PATH, $notes);
   return $notes;
 }
