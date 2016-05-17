@@ -13,7 +13,7 @@ Run For Development 'using node.js server to watch for any changes and apply the
 
 Demo expected output
  * [x] helloworld basic example
- * [ ] a crud with [add more] function and [add, edit, delete, done] actions, or simpler form
+ * [x] a crud with [add more] function and [add, edit, delete, done] actions, or simpler form
  * [x] style via scss using compass compiler
  * [x] webpack compiling for [jsx, es2015]
  * [x] webpack compiling for [scss]
