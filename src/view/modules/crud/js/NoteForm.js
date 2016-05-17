@@ -53,7 +53,7 @@ export class NoteForm extends React.Component {
               className="form-control"
             />
           </div>
-          <input type="submit" value="Post" className="btn btn-default"/>
+          <input type="submit" value="Submit" className="btn btn-default"/>
         </form>
       </div>
     );
