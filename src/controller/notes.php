@@ -29,7 +29,28 @@ function postData(){
 }
 
 /**
-* Delete data to be stored
+* Put data to be stored
+* @return string json data file content with the posted data added
+*/
+function putData(){
+  $notes = getData(RESOURCE_PATH);
+  $notesDecoded = json_decode($notes, true);
+  $id = filter_input(INPUT_GET, 'id');
+  parse_str(file_get_contents("php://input"),$postData);
+  foreach($notesDecoded as $noteIdentifier => &$note){
+    if($note['id'] == $id){
+      $note['title'] = $postData['title'];
+      $note['body'] = $postData['body'];
+      break;
+    }
+  }
+  $notes = json_encode($notesDecoded, JSON_PRETTY_PRINT);
+  file_put_contents(RESOURCE_PATH, $notes);
+  return $notes;
+}
+
+/**
+* Delete data
 * @return string json data file content with the posted data added
 */
 function deleteData(){
